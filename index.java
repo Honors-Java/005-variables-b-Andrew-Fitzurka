@@ -1,12 +1,14 @@
-int x = 150;
-int y = 150;
-int a = 275;
-int b = 100;
+int x = int (random(5, 500));
+int y = int (random(5, 500));
+int a = int (random(1, 255));
+int b = int (random(1, 255));
 
 void setup() {
 	size(500, 500);
+  fill(a, b, a + b);
+  rect(x, y, x, y);
 }
-
+  
 void draw() {
 // Step 1: Write code that draws the following screenshots 
 // with hard-coded values. (Feel free to use colors 
@@ -21,21 +23,23 @@ void draw() {
 
 // Step 4: Make it so when the program runs the ball slides off the screen exiting at the point (500, 500)
 
-  background(60, 6, 79);
   stroke(0);
 
-  fill(200, 175, 56);
-  rectMode(CENTER);
-  rect(x, y, a, a);
-  fill(255, 25, 39);
+  fill(a, b, a + b);
+  rect(x, y, x, y);
+
+  fill(int (random(1, 255)), int (random(1, 255)), int (random(1, 255)));
   ellipseMode(CENTER);
-  ellipse(x, y, b, b);
-  
-  x = x + 1;
-  y = y + 1;
+  ellipse(pmouseX + (int (random (-30, 30))), pmouseY + (int (random(-30, 30))), 10, 10);
 }
 
 void mousePressed() {
-  a = a - 10;
-  b = b - 5;
-}
+  background(255);
+  x = int (random(5, 500));
+  y = int (random(5, 500));
+  a = int (random(1, 255));
+  b = int (random(1, 255));
+//Rectangle
+  fill(a, b, a + b);
+  rect(x, y, x, y);
+  }
